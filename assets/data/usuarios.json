@@ -1,0 +1,66 @@
+[
+    {
+        "user":"admin",
+        "password":"admin",
+        "nombre": "Mariana",
+        "apellido": "Mendez",
+        "materia": null,
+        "email":"mariana.mendez@instituto.edu.ar"
+    },
+    {
+        "user":"lengua",
+        "password":"lengua",
+        "nombre": "Silvana",
+        "apellido": "Jofre",
+        "materia":"LENGUA",
+        "email":"sivana.jofre@instituto.edu.ar"
+    },
+    {
+        "user":"historia",
+        "password":"historia",
+        "nombre": "Viviana",
+        "apellido": "Nieto",
+        "materia":"HISTORIA",
+        "email":"viviana.nieto@instituto.edu.ar"
+    },
+    {
+        "user":"geografia",
+        "password":"geografia",
+        "nombre": "Fabian",
+        "apellido": "Alcantar",
+        "materia":"GEOGRAFIA",
+        "email":"fabian.alcantar@instituto.edu.ar"
+    },
+    {
+        "user":"matematica",
+        "password":"matematica",
+        "nombre": "Emmanuel",
+        "apellido": "Novoa",
+        "materia":"MATEMATICA",
+        "email":"emmanuel.novoa@instituto.edu.ar"
+    },
+    {
+        "user":"biologia",
+        "password":"biologia",
+        "nombre": "Yesica",
+        "apellido": "Mut",
+        "materia":"BIOLOGIA",
+        "email":"yesica.mut@instituto.edu.ar"
+    },
+    {
+        "user":"quimica",
+        "password":"quimica",
+        "nombre": "Natalia",
+        "apellido": "Gonzalez",
+        "materia":"QUIMICA",
+        "email":"nataia.gonzalez@instituto.edu.ar"
+    },
+    {
+        "user":"fisica",
+        "password":"fisica",
+        "nombre": "Nicolas",
+        "apellido": "Martin",
+        "materia":"FISICA",
+        "email":"nicolas.martin@instituto.edu.ar"
+    }
+]

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeeK PreUniversitario</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./scripts/main.js" type="module"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="StyleSheet" href="./styles/estilo.css">
+    <link rel="icon" href="./assets/Imagenes/icono.png">
+
+    
+</head>
+
+<body>
+    
+    <div>
+        <header id="header">
+            <ul class="nav">
+                <li id="nav-materias"><a href="">Materias</a>
+                    <ul id="materiaNav"></ul>
+                </li>
+                <li id="ordenTabla"><a href="">Orden Por apellido</a></li>
+                <li><a href="">Condición</a>
+                    <ul id="condicion">
+                        <li id="aprobados"><a href="">Aprobados</a></li>  
+                        <li id="desaprobados"><a href=""> Desaprobados</a></li>
+                        <li id="todos"><a href="">Todos</a></li>
+                    </ul>
+                </li>
+                <li id="sesion" hidden="true"><a href="">Iniciar Sesión</a></li>
+                <li id="cerrar" hidden="true"></li>
+            </ul>
+        </header>
+    </div>
+    <div class="fondo">
+        <h1>MeeK PreUniversitario </h1>
+        
+        <div class="modal-buscar">
+            <form id="formBuscar" class="d-flex">
+                <input id="busacar" class="form-control me-2" type="search" placeholder="Buscar Estudiante..." aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+              </form>
+        </div>
+        <div id="aside-user">
+        </div>
+        <div>
+            <form id="formularioAlumno">
+                <h3>Agregar Estudiante a la Lista</h3>
+                <div class="mb-3">
+                    <label for="nombre1" class="form-label">Nombre Estudiante</label>
+                    <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Nombre">
+                    <p id="errorNom" class="error"></p>
+                </div>
+                <div class="mb-3">
+                    <label for="apellido1" class="form-label">Apellido Estudiante</label>
+                    <input type="text" class="form-control" id="apellido" aria-describedby="emailHelp" placeholder="Apellido">
+                    <p id="errorApe" class="error"></p>
+                </div>
+                <div class="mb-3">
+                    <label for="materia1" class="form-label">Materia</label>
+                    <select class="form-control" id="materia" aria-describedby="emailHelp"></select>
+                    <p id="errorMat" class="error"></p>
+                </div>
+                <div class="mb-3">
+                    <label for="nota1" class="form-label">Nota Trabajo Practico 1</label>
+                    <input type="text" class="form-control" id="nota1" aria-describedby="emailHelp" placeholder=" Práctico 1">
+                    <p id="errorN1" class="error"></p>
+                </div>
+                <div class="mb-3">
+                    <label for="nota2" class="form-label">Nota Trabajo Practico 2</label>
+                    <input type="text" class="form-control" id="nota2" aria-describedby="emailHelp" placeholder="Práctico 2">
+                    <p id="errorN2" class="error"></p>
+                </div>
+                <div class="mb-3">
+                    <label for="nota3" class="form-label">Nota Parcial 1</label>
+                    <input type="text" class="form-control" id="nota3" aria-describedby="emailHelp" placeholder="Parcial 1">
+                    <p id="errorN3" class="error"></p>
+                </div>
+                <div class="mb-3">
+                    <label for="nota4" class="form-label">Nota Parcial 2</label>
+                    <input type="text" class="form-control" id="nota4" aria-describedby="emailHelp" placeholder="Parcial2">
+                    <p id="errorN4" class="error"></p>
+                </div>
+                <button type="submit" id="botonAgregar"class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Agregar</button>
+                
+            </form>
+        </div>
+        <div id="alumnosCondicion" hidden="true">
+            <h3 id="titulocondicion"></h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Materia</th>
+                        <th scope="col">Primer Trabajo</th>
+                        <th scope="col">Segundo Trabajo</th>
+                        <th scope="col">Primer Parcial</th>
+                        <th scope="col">Segundo Parcial</th>
+                        <th scope="col">Promedio</th>
+                        <th scope="col">Condición</th>
+                </tr>
+                </thead>
+                <tbody id="tablaCondicion">
+                </tbody>
+            </table> 
+            <div id="btnTodos"> <button type="button" class="btn btn-secondary">Volver</button> </div>
+        </div>
+
+        <div id="tablaAlumnos">
+            <h3>Lista de Lista de Estudiantes</h3>
+            <table class="table" >
+                <thead>
+                    <tr>
+                        <th scope="col">N°</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Materia</th>
+                        <th scope="col">Primer Trabajo</th>
+                        <th scope="col">Segundo Trabajo</th>
+                        <th scope="col">Primer Parcial</th>
+                        <th scope="col">Segundo Parcial</th>
+                        <th scope="col">Promedio</th>
+                        <th scope="col">Condición</th>
+                        <th scope="col"> Editar</th>
+                        <th scope="col"> Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaAgregados">
+                </tbody>
+            </table>
+            <div id="borrarTabla"></div>
+        </div>
+
+        <div id="divBuscar" hidden="true">
+            <div id="modalBuscar" class="modal">
+                <div id= "cerrarModal" class="modal-cerrar">
+                    <samp>x</samp>
+                </div>
+                <table class="table" id="table-buscar">
+                    <thead>
+                        <tr>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Materia</th>
+                            <th scope="col">Primer Trabajo</th>
+                            <th scope="col">Segundo Trabajo</th>
+                            <th scope="col">Primer Parcial</th>
+                            <th scope="col">Segundo Parcial</th>
+                            <th scope="col">Promedio</th>
+                            <th scope="col">Condición</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaBuscar"></tbody>
+                </table> 
+            </div>
+        </div>
+        <div id="modal-inicio" class="modal-inicio">
+            <img src="./assets/Imagenes/inicio.jpeg" alt="">
+        </div> 
+        
+    </div>  
+       
+</body>
